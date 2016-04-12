@@ -8,7 +8,7 @@ import haloapi.Halo5Api
 
 
 class HaloTestController @Inject() (api: Halo5Api) extends Controller {
-  def index = Action.async {
-    api.getMatchesForUser().map(Ok(_))
+  def index(user: String) = Action.async {
+    api.getMatchesForUser(user).map(Ok(_))
   }
 }
